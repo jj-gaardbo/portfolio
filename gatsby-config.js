@@ -8,33 +8,32 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: '@fs/gatsby-plugin-drive',
+      resolve: '@acto/gatsby-plugin-drive',
       options: {
         folderId: '1HwWPwl65cFQZas-GhUOZo_XFJXJGjgKH',
-        keyFile: `${__dirname}/client_secret_982866564065-pmtsuoc19nblcm51krmvk0lc21gi3fuj.apps.googleusercontent.com.json`,
+        keyFile: `${__dirname}/client_secret.json`,
         destination: `${__dirname}/content`,
         exportGDocs: true,
         exportMimeType: 'text/html',
         exportMiddleware: sanitizeHtml
       }
     },
-
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-source-filesystem',
+      resolve: '@acto/gatsby-source-filesystem',
       options: {
         name: 'images',
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: '@acto/gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content`
+      }
+    },
+    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-emotion',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
