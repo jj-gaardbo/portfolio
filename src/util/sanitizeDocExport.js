@@ -14,7 +14,7 @@ function sanitizeDocExport(buffer) {
 		})
 
 	const options = {
-		allowedTags: sanitize.defaults.allowedTags.concat(['h1', 'h2'])
+		allowedTags: sanitize.defaults.allowedTags.concat(['h1', 'h2', 'img'])
 	}
 
 	return Buffer.from(sanitize(h.html(), options))
