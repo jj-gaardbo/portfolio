@@ -1,14 +1,6 @@
 const Path = require('path')
-const FS = require('fs')
-const { createFilePath } = require('@acto/gatsby-source-filesystem')
-const { getGDoc } = require( "@acto/gatsby-plugin-drive/googleapis")
+const { groupToProjectPageObject } = require('./src/util/pageMapper')
 
-let token = require("client_secret.json")
-
-exports.onPostBuild = () =>{
-  getGDoc("1lesTFK6MFYCax1eeCmO_CKtAOraaysuH7F7fJKnmd_U", token, "text/html")
-  return {__html: html};
-}
 
 exports.onCreateWebpackConfig = ({ getConfig, stage, actions }) => {
   const config = getConfig()
@@ -37,22 +29,29 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, actions }) => {
   })
 }
 
-exports.createPages = ({ graphql, actions }) => {
- 	graphql(`
- 		query PagesQuery {
- 		  allFile(filter: {relativePath: {regex: "/"}}) {
- 			group(field: dir) {
- 			  edges {
- 				node {
- 				  relativePath
- 				  extension
- 				  content
- 				}
- 			  }
- 			}
- 		  }
- 		}
- 	`).then(({ data }) => {
- 		console.log("Content: %j", data)
- 	})
+exports.createPages = async ({ graphql, actions }) => {
+  await graphql(`
+		query ProjectQuery {
+		  allFile(filter: {relativePath: {regex: "/projects/"}}) {
+			group(field: dir) {
+			  edges {
+				node {
+				  base
+				  relativeDirectory
+				  content
+				}
+			  }
+			}
+		  }
+		}
+	`).then(({ data }) => {
+    data.allFile.group.forEach(group => {
+      const projectPageObject = groupToProjectPageObject(group)
+      actions.createPage({
+        path: projectPageObject.pagePath,
+        component: Path.resolve(__dirname, 'src/templates/project.js'),
+        context: projectPageObject
+      })
+    })
+  })
 }
