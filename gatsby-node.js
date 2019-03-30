@@ -10,23 +10,6 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, actions }) => {
       'react-dom': '@hot-loader/react-dom'
     }
   }
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.md$/,
-          loaders: ['html-loader', 'markdown-loader'],
-        },
-        {
-          test: /\.html$/,
-          loader: 'html-loader',
-          options: {
-            minimize: false,
-          },
-        },
-      ],
-    },
-  })
 }
 
 exports.createPages = async ({ graphql, actions }) => {

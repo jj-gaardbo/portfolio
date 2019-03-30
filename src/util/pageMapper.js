@@ -16,5 +16,5 @@ function groupToProjectPageObject(group) {
 
 module.exports = {
   pathToSlug,
-  groupToCasePageObject
+  groupToProjectPageObject
 }

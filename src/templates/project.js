@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProjectPage = ({ pageContext }) => {
   return (
-    <div>Horse</div>
+    <div dangerouslySetInnerHTML={{__html: pageContext.content}}></div>
   )
 }
 
