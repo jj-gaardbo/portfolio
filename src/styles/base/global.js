@@ -5,16 +5,13 @@ import resets from './resets'
 export default css`
   ${resets}
 
-  #___gatsby [tabindex= "-1"]{
+  #___gatsby 	[tabindex= "-1"], .wrapper{
     display: grid;
-    grid-template-columns: ${constant.padMobile} [contentStart] repeat(10, 1fr) [contentEnd] ${constant.padMobile};
-    grid-template-rows: auto 1fr;
-    
-    ${constant.mq[1]} {
-			grid-template-columns: ${constant.padDesktop} [contentStart] repeat(10, 1fr) [contentEnd] ${constant.padDesktop};
-    }
+    grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
+  }
   
-  .wrapper{
-        
+  header, main{
+    display: grid;
+    grid-column: 3;
   }
 `

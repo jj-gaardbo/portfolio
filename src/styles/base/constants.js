@@ -1,6 +1,6 @@
 export const wrapperMaxWidthDesktop = '1366px'
 export const padDesktop = '24px'
-export const padMobile = '24px'
+export const padMobile = '20px'
 
 export const headerHeight = '300px'
 export const logoWidth = '230px'

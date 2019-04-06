@@ -50,6 +50,7 @@ export default css`
 	}
 	body {
 		margin: 0;
+		padding: 0;
 	}
 	main {
 		display: block;

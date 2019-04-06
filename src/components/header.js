@@ -12,11 +12,9 @@ const HeaderStyled = styled.header`
 
 const Header = ({ siteTitle }) => (
   <HeaderStyled>
-    <div className="wrapper">
-      <Link to='/' aria-label='Home' className={"logo"}>
-        <Svg svg={Logo} fill={"#010101"} width={230} />
-      </Link>
-    </div>
+    <Link to='/' aria-label='Home' className={"logo"}>
+      <Svg svg={Logo} fill={"#010101"} width={230} />
+    </Link>
   </HeaderStyled>
 )
 
