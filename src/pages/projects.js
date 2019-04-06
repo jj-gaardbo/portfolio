@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import ProjectItem from "../components/ProjectItem"
 import { pathToSlug } from "../util/pageMapper"
 import { Link } from "gatsby"
+import projectsOverviewStyles from '../styles/pages/projects'
 
 const ProjectsPage = ({ data }) => {
 
@@ -19,7 +20,7 @@ const ProjectsPage = ({ data }) => {
   })
 
   return(
-    <Layout>
+    <Layout styles={projectsOverviewStyles}>
       <SEO title="Gaardbo Digital - Projects" keywords={[`projects`, `overview`, `gaardbo digital`]} />
 
       <section className='projects-overview'>

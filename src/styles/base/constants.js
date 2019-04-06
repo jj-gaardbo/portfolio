@@ -5,7 +5,7 @@ export const wrapperMaxWidthMobile = '576px'
 export const padDesktop = '24px'
 export const padMobile = '20px'
 
-export const headerHeight = '300px'
+export const headerHeight = '150px'
 export const logoWidth = '230px'
 export const burgerBtnWidth = '58px'
 export const burgerBtnHeight = '50px'

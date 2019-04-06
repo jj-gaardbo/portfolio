@@ -19,8 +19,8 @@ const Header = ({ siteTitle }) => (
       <Svg svg={Logo} fill={"#010101"} width={230} />
     </Link>
     <ResponsiveMenu
-      menuOpenButton={<Svg svg={OpenMenu}/>}
-      menuCloseButton={<Svg svg={CloseMenu}/>}
+      menuOpenButton={<Svg width={58} height={50} svg={OpenMenu}/>}
+      menuCloseButton={<Svg width={58} height={35} svg={CloseMenu}/>}
       changeMenuOn="992px"
       largeMenuClassName="navbar-desktop"
       smallMenuClassName="navbar-mobile"

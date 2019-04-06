@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import * as constant from './constants'
-import resets from './resets'
+import * as resets from './resets'
 import navigation from './navigation'
 
 export default css`
@@ -24,6 +24,7 @@ export default css`
   header{
     display: grid;
     grid-column: 2;
+    grid-template-rows: ${constant.headerHeight};
     .logo{
       &>svg{
         width: 100px
