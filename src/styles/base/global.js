@@ -14,41 +14,65 @@ export default css`
     grid-column: -1 / 1;
   }
   
-  header{
+  .push{
     display: grid;
     grid-column: -1 / 1;
+    height: ${constant.headerHeightMob};
+    background-color: ${constant.darkWhite};
     
-    grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
     ${constant.lg}{
-      grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
+      height: ${constant.headerHeight};
     }
-    ${constant.xl}{
-      grid-template-columns: auto ${constant.padDesktop} [contentStart] calc(${constant.wrapperMaxWidthDesktopSmall} - (${constant.padDesktop}*2)) [contentEnd] ${constant.padDesktop} auto;
-    }
-    ${constant.xxl}{
-      grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
-    }
- 
-    .container{
+    
+  }
+  
+  header{
+    position: fixed;
+    width: 100%;
+    background-color: ${constant.darkWhite};
+    
+    .header-inner{
       display: grid;
-      grid-template-columns: ${constant.logoWidthMob} auto;
-      grid-column: 2;
-      grid-template-rows: ${constant.headerHeight};
-      .logo{
-        &>svg{
-          width: ${constant.logoWidthMob}
-        }
+      grid-column: -1 / 1;
+      
+      grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
+      ${constant.lg}{
+        grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
       }
-      ${constant.lg} {
-        grid-template-columns: ${constant.logoWidth} auto;
-        grid-column: 3;
+      ${constant.xl}{
+        grid-template-columns: auto ${constant.padDesktop} [contentStart] calc(${constant.wrapperMaxWidthDesktopSmall} - (${constant.padDesktop}*2)) [contentEnd] ${constant.padDesktop} auto;
+      }
+      ${constant.xxl}{
+        grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
+      }
+   
+      .container{
+        display: grid;
+        grid-template-columns: ${constant.logoWidthMob} auto;
+        grid-column: 2;
+        grid-template-rows: ${constant.headerHeight};
+        div:first-of-type{
+          display: grid;
+          justify-items: end;
+          align-items: center;
+        }
         .logo{
           &>svg{
-            width: ${constant.logoWidth};
+            width: ${constant.logoWidthMob}
           }
         }
+        ${constant.lg} {
+          grid-template-columns: ${constant.logoWidth} auto;
+          grid-column: 3;
+          .logo{
+            &>svg{
+              width: ${constant.logoWidth};
+            }
+          }
+        }
+        
       }
-      
+    
     }
   }
   

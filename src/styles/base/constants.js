@@ -6,6 +6,7 @@ export const padDesktop = '24px'
 export const padMobile = '20px'
 
 export const headerHeight = '150px'
+export const headerHeightMob = '100px'
 export const logoWidth = '230px'
 export const logoWidthMob = '100px'
 export const burgerBtnWidth = '58px'

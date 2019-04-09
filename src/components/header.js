@@ -16,26 +16,28 @@ const HeaderStyled = styled.header`
 
 const Header = ({ siteTitle }) => (
   <HeaderStyled>
-    <div className="container">
-      <Link to='/' aria-label='Home' className={"logo"}>
-        <Svg svg={Logo} fill={constant.black} width={constant.logoWidth} />
-      </Link>
-      <ResponsiveMenu
-        menuOpenButton={<Svg width={constant.burgerBtnWidth} height={constant.burgerBtnHeight} svg={OpenMenu}/>}
-        menuCloseButton={<Svg width={constant.burgerBtnWidth} height={35} svg={CloseMenu}/>}
-        changeMenuOn="992px"
-        largeMenuClassName="navbar-desktop"
-        smallMenuClassName="navbar-mobile"
-        menu={
-          <div className={"nav-menu"}>
-            <ul>
-              <li>
-                <Link to="/projects">Projects</Link>
-              </li>
-            </ul>
-          </div>
-        }
-      />
+    <div className="header-inner">
+      <div className="container">
+        <Link to='/' aria-label='Home' className={"logo"}>
+          <Svg svg={Logo} fill={constant.black} width={constant.logoWidth} />
+        </Link>
+        <ResponsiveMenu
+          menuOpenButton={<Svg width={constant.burgerBtnWidth} height={constant.burgerBtnHeight} svg={OpenMenu}/>}
+          menuCloseButton={<Svg width={constant.burgerBtnWidth} height={35} svg={CloseMenu}/>}
+          changeMenuOn="992px"
+          largeMenuClassName="navbar-desktop"
+          smallMenuClassName="navbar-mobile"
+          menu={
+            <div className={"nav-menu"}>
+              <ul>
+                <li>
+                  <Link to="/projects">Projects</Link>
+                </li>
+              </ul>
+            </div>
+          }
+        />
+      </div>
     </div>
   </HeaderStyled>
 )

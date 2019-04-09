@@ -19,10 +19,11 @@ const Layout = ({ children, styles }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-          <main>
-            <Global styles={styles} />
-            {children}
-          </main>
+        <div className="push">&nbsp;</div>
+        <main>
+          <Global styles={styles} />
+          {children}
+        </main>
       </>
     )}
   />

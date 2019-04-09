@@ -11,7 +11,7 @@ export default css`
 
 export const QuickLinkStyle = css`
   background-color: ${constant.babyBlue};
-  height: 100px;
+  height: 3000px;
   display: grid;
   grid-column: -1 / 1;
 `
