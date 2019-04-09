@@ -5,17 +5,12 @@ import Svg from "./Svg"
 import Logo from "../images/logo.svg"
 import OpenMenu from "../images/icons/menuButton.svg"
 import CloseMenu from "../images/icons/closeButton.svg"
-import styled from "@emotion/styled"
-import header from "../styles/sections/header"
+import header from "../styles/sections/template"
 import ResponsiveMenu from 'react-responsive-navbar';
 import * as constant from '../styles/base/constants'
 
-const HeaderStyled = styled.header`
-  ${header}
-`
-
 const Header = ({ siteTitle }) => (
-  <HeaderStyled>
+  <header>
     <div className="header-inner">
       <div className="container">
         <Link to='/' aria-label='Home' className={"logo"}>
@@ -39,7 +34,7 @@ const Header = ({ siteTitle }) => (
         />
       </div>
     </div>
-  </HeaderStyled>
+  </header>
 )
 
 Header.propTypes = {

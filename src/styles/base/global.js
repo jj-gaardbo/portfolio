@@ -27,6 +27,7 @@ export default css`
   }
   
   header{
+    z-index: 99;
     position: fixed;
     width: 100%;
     background-color: ${constant.darkWhite};
@@ -80,7 +81,8 @@ export default css`
     display: grid;
     grid-column: -1 / 1;
 
-    &>div{
+    &>div, >section{
+      display: grid;
       grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
       ${constant.lg}{
         grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;

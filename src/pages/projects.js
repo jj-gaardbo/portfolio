@@ -22,19 +22,58 @@ const ProjectsPage = ({ data }) => {
   return(
     <Layout styles={projectsOverviewStyles}>
       <SEO title="Gaardbo Digital - Projects" keywords={[`projects`, `overview`, `gaardbo digital`]} />
+        <section className='projects-overview'>
+          <div className="container">
+          {/*{
+            projects.map((node, index) => (
+              <ProjectItem
+                key={index}
+                content={node.content}
+                imagePath={`${node.path}/profile.jpg`}
+                path={pathToSlug(node.path)}/>
+            ))
+          }*/}
 
-      <section className='projects-overview'>
-        {
-          projects.map((node, index) => (
             <ProjectItem
-              key={index}
-              content={node.content}
-              imagePath={`${node.path}/profile.jpg`}
-              path={pathToSlug(node.path)}/>
-          ))
-        }
-      </section>
-      <Link to="/">Go back to the homepage</Link>
+              key={1}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+            <ProjectItem
+              key={2}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+            <ProjectItem
+              key={3}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+            <ProjectItem
+              key={1}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+            <ProjectItem
+              key={2}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+            <ProjectItem
+              key={3}
+              content={projects[0].content}
+              imagePath={`${projects[0].path}/profile.jpg`}
+              path={pathToSlug(projects[0].path)}/>
+
+
+          </div>
+        </section>
+        <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 
