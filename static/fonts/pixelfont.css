@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Pixel";
+    font-display: swap;
+    src: url("/fonts/PixelFJVerdana12pt.eot");
+    src: url("/fonts/PixelFJVerdana12pt.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/PixelFJVerdana12pt.woff2") format("woff2"),
+    url("/fonts/PixelFJVerdana12pt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

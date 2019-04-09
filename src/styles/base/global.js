@@ -1,10 +1,12 @@
 import { css } from '@emotion/core'
 import * as constant from './constants'
 import * as resets from './resets'
+import typography from './typography'
 import navigation from './navigation'
 
 export default css`
   ${resets}
+  ${typography}
   ${navigation}
 
   #___gatsby 	[tabindex= "-1"]{

@@ -38,3 +38,22 @@ export const tabletLandscape = `@media screen and (min-device-width: ${breakpoin
 
 export const mobilePortrait = `@media screen and (max-device-width: ${breakpoints[0]}px) and (orientation: portrait)`
 export const mobileLandscape = `@media screen and (max-device-width: ${breakpoints[0]}px) and (orientation: landscape)`
+
+//Font sizes
+export const h1SizeDesk = '32pt'
+export const h2SizeDesk = '28pt'
+export const h3SizeDesk = '24pt'
+export const h4SizeDesk = '20pt'
+export const h5SizeDesk = '18pt'
+export const h6SizeDesk = '16pt'
+
+export const h1SizeMob = '24pt'
+export const h2SizeMob = '20pt'
+export const h3SizeMob = '18pt'
+export const h4SizeMob = '16pt'
+export const h5SizeMob = '12pt'
+export const h6SizeMob = '11pt'
+
+export const textSize = '11pt'
+export const navFontSizeDesk = '12pt'
+export const navFontSizeMob = '11pt'

@@ -32,7 +32,19 @@ module.exports = {
         path: `${__dirname}/content`
       }
     },
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Open Sans:300,400,600']
+        },
+        custom: {
+          families: ['Pixel'],
+          urls: ['/fonts/pixelfont.css']
+        }
+      }
+    },
     'gatsby-plugin-emotion',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

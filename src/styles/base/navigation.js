@@ -38,6 +38,7 @@ export default css`
           a{
             color: ${constant.darkWhite};
             text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
           }
         }
       }
