@@ -7,6 +7,7 @@ export const padMobile = '20px'
 
 export const headerHeight = '150px'
 export const logoWidth = '230px'
+export const logoWidthMob = '100px'
 export const burgerBtnWidth = '58px'
 export const burgerBtnHeight = '50px'
 export const projectBoxSmallWidth = '442px'
