@@ -1,10 +1,8 @@
 language: node_js
 node_js:
-  - '10.0'
-
+- '10.0'
 dist: trusty
 sudo: false
-
 deploy:
   provider: script
   script: bash scripts/deploy.sh
@@ -12,12 +10,6 @@ deploy:
     branch: master
 env:
   global:
-    - 'SFTP_USER=[user]'
-    - 'SFTP_PASSWORD=[password]'
-    - 'SFTP_KEY=[base64-encoded-rsa-key]'
-after_success:
-  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-  - curl --ftp-create-dirs
-    -T filename
-    --key /tmp/sftp_rsa
-    sftp://${SFTP_USER}:${SFTP_PASSWORD}@example.com/directory/filename
+  - secure: PuX/VCDTOb0GU+jC+osdbbzFrt34HQ3OscwgupD0xx0dc5h5AOmXLSsDTLFZh5Kp9khcCScuIFCKqL0Z+lez+nt5fsen9q3Mc5fTQkqF0f9YMacJI78mQhI/0wm7eDeWgw7fGca6y9ucEI2/CmRc+ClVajO3GDMlllmkRek5S6t/lB+vsm9K8mDB6wEgfPaxjhbazIP9ToKpVPQQ0LwZymrFpkb5x43femHwGqzBI6F5PV7ExR13pjPN9thgWLXfAS7J+kVu1oljMXo3Dg3l0kKsp5iHcVejerCElE55g0CWStwfc5X9mFNGrE6cEzn4J2fCM2IX0U1HfbFXbdkDijJlLVoA8fTkwqGjQl7YozVyEHuTrsUoSrxdu7Y8IJZCe6izWysdqYp1ZxU/g2X+62/brHAqHpYlKTvh1SrHnFh5wYl+0jlEMUfBPb8Gtj8T99k3ATL1LhGMJKggRIN8pAmBpsLq651z3coDDGy+rcViM1KVwG25oLd9Fun1R1UwWGbUK2NoQ4SmQZxVwIMHFDwQb4ODZ9iCuAYgLA/t08H63LxVmktH8SQkrKrkBgkk7mR37xR+EIhPKt1A5X4plINeSNCGa6gw1TTN2xqr8aP3pUbwMMFYm5/E6yOYkb+Cqc9a2P334bOS0KOoCeHMuUDu/vO6vzdz1p7d/mL9T4g=
+  - secure: UUrmiVXa/CVRs4dRiQO6ONUO/8U7ZmyNd1osuRx1ayeAvaIXb8LHJhTSiYLHw780PCEH0hXfRED/NJSOvSW5DCVDEQUigcnaNEHVj6II4O6eTj99qIfduEpEDHJMLyPgBX43r7gmKVBxicNn5V4PPw+2ULInxea0/x6LmA2CfGJYuX4HZyKyEYFjyhIOaglPxCIM+X6ob82cgEO812MnwbuqbCclEtLBfOe3NOYeeBIcjRt6yCqzjUqz1YIhWN6dJFjMWZicbjvdB5dEmfp2r79sJbJuj4kyi2I+CWuQzfNZaBXUhlcHIqu6GzaW336sU2/g0scZlpS1K48HmD3y+7CifRimUnL8U5tDAwgFhCV2mpmeghmDh9eEZizwPrpedb4TvO9R9EDZtr96Aau2FBVNbdnDVjbuuUtjufB7E3X6/c3FgccGRZ5lySb9kFiKgsRDX2QmHQAGHqsMql3uO5B9CupmeZ88hxA3zRy9PkG3qNeKVz54tbjh4IGZmAK8R6vhhjqVghkD1Fj/dlFmCqpoqx5lzDF/f+kZXMViMdfPY7UPgUchwcuct3hyFTxSyUhfbVTKFmo9zWUR8vcmnSmdA/IXeUNrwqsEhJEja7KufhwJE/a+JYSSkvozEzs3DGi6dmzRubxB7hFDPHvzepl4nOeYS2iBpxT9qCF0xtE=
+after_success: curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://gaardbodigital.dk
