@@ -76,3 +76,5 @@ yarn-error.log
 client_secret.json
 
 content/
+
+package-lock.json
