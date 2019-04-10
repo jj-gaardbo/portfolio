@@ -5,7 +5,7 @@ dist: trusty
 sudo: false
 deploy:
   provider: script
-  script: bash scripts/deploy.sh
+  script: chmod +x ./deploy.sh && ./deploy.sh
   on:
     branch: master
 env:
