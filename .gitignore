@@ -79,4 +79,4 @@ content/
 
 package-lock.json
 
-deploy/config.js
+deploy.js
