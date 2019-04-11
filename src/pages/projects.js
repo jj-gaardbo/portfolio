@@ -6,6 +6,7 @@ import ProjectItem from "../components/ProjectItem"
 import { pathToSlug } from "../util/pageMapper"
 import { Link } from "gatsby"
 import projectsOverviewStyles from '../styles/pages/projects'
+import { getImagePath } from "../util/common"
 
 const ProjectsPage = ({ data }) => {
 
@@ -33,41 +34,40 @@ const ProjectsPage = ({ data }) => {
                 path={pathToSlug(node.path)}/>
             ))
           }*/}
-
             <ProjectItem
               key={1}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
             <ProjectItem
               key={2}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
             <ProjectItem
               key={3}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
             <ProjectItem
-              key={1}
+              key={4}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
             <ProjectItem
-              key={2}
+              key={5}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
             <ProjectItem
-              key={3}
+              key={6}
               content={projects[0].content}
-              imagePath={`${projects[0].path}/profile.jpg`}
+              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
               path={pathToSlug(projects[0].path)}/>
 
 

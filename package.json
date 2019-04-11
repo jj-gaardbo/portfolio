@@ -52,7 +52,7 @@
     "dev": "gatsby develop",
     "dev-m": "gatsby develop -H 0.0.0.0",
     "clean": "rimraf public content .cache",
-    "deploy": "node deploy"
+    "deploy": "yarn clean && yarn build && node deploy"
   },
   "repository": {
     "type": "git",
