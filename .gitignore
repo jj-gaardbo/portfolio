@@ -79,4 +79,4 @@ content/
 
 package-lock.json
 
-FTP_Deploy.js
+deploy/config.js
