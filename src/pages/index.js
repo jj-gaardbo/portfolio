@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import frontPageStyle from '../styles/pages/frontpage'
 import { QuickLink } from "../styles/pages/frontpage"
+import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   return(
@@ -12,7 +13,8 @@ const IndexPage = ({ data }) => {
       <QuickLink>
 
         <div className="container">
-          Hey
+          {console.log(data)}
+          <div dangerouslySetInnerHTML={{__html: data.fileName.content}}></div>
         </div>
 
       </QuickLink>
@@ -21,5 +23,15 @@ const IndexPage = ({ data }) => {
   )
 
 }
+
+export const query = graphql`
+query IndexPageQuery {
+  fileName: file(relativePath: {eq: "content.html"}) {
+    base
+    relativeDirectory
+    content
+  }
+}
+`
 
 export default IndexPage

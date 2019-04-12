@@ -12,7 +12,7 @@ const ProjectItem = props => (
   <ProjectItemStyled>
     <Link to={props.path}>
       <Image alt={"ImageTest"} path={props.imagePath} />
-      <div dangerouslySetInnerHTML={{  __html: props.content  }} />
+      <p>{props.settings.title}</p>
     </Link>
   </ProjectItemStyled>
 )

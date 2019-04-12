@@ -25,52 +25,16 @@ const ProjectsPage = ({ data }) => {
       <SEO title="Gaardbo Digital - Projects" keywords={[`projects`, `overview`, `gaardbo digital`]} />
         <section className='projects-overview'>
           <div className="container">
-          {/*{
+          {
             projects.map((node, index) => (
               <ProjectItem
                 key={index}
+                settings={node.settings}
                 content={node.content}
                 imagePath={`${node.path}/profile.jpg`}
                 path={pathToSlug(node.path)}/>
             ))
-          }*/}
-            <ProjectItem
-              key={1}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-            <ProjectItem
-              key={2}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-            <ProjectItem
-              key={3}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-            <ProjectItem
-              key={4}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-            <ProjectItem
-              key={5}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-            <ProjectItem
-              key={6}
-              content={projects[0].content}
-              imagePath={getImagePath(projects[0].path, projects[0].settings.mainImg)}
-              path={pathToSlug(projects[0].path)}/>
-
-
+          }
           </div>
         </section>
         <Link to="/">Go back to the homepage</Link>
