@@ -5,12 +5,32 @@ import Svg from "./Svg"
 import Logo from "../images/logo.svg"
 import OpenMenu from "../images/icons/menuButton.svg"
 import CloseMenu from "../images/icons/closeButton.svg"
-import header from "../styles/sections/template"
 import ResponsiveMenu from 'react-responsive-navbar';
 import * as constant from '../styles/base/constants'
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 
-const Header = ({ siteTitle }) => (
-  <header>
+const HeaderStyled = styled.header(props => (css`
+  background-color: ${props.backgroundColor};
+  color: ${props.color};
+  .logo{
+    svg{
+      fill: ${props.color};
+    }
+  }
+  .nav-menu{
+    ul{
+      li{
+        a{
+          color: ${props.color};
+        }
+      }
+    }
+  }
+`))
+
+const Header = ({ siteTitle, backgroundColor, color }) => (
+  <HeaderStyled backgroundColor={backgroundColor} color={color}>
     <div className="header-inner">
       <div className="container">
         <Link to='/' aria-label='Home' className={"logo"}>
@@ -34,15 +54,17 @@ const Header = ({ siteTitle }) => (
         />
       </div>
     </div>
-  </header>
+  </HeaderStyled>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  backgroundColor: PropTypes.string
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  backgroundColor: ''
 }
 
 export default Header

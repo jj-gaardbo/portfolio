@@ -27,6 +27,8 @@ export const brown = '#b26d00'
 export const yellow = '#ff9800'
 export const black = '#010101'
 
+
+
 export const breakpoints = [576, 768, 992, 1200, 1366]
 export const xs = `@media (max-width: ${breakpoints[0]}px)`
 export const sm = `@media (min-width: ${breakpoints[0]}px)`

@@ -4,18 +4,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import projectTemplateStyles from '../styles/pages/project'
 import VideoEmbed from "../components/VideoEmbed"
+import { Section } from "../components/Section"
+import * as constant from "../styles/base/constants.js"
+import { invertColor } from "../util/common"
 
 const ProjectPage = ({ pageContext }) => {
   return (
-    <Layout styles={projectTemplateStyles}>
+    <Layout styles={projectTemplateStyles} backgroundColor={pageContext.settings.color} color={invertColor(pageContext.settings.color)}>
       <SEO title="Gaardbo Digital - Projects" keywords={[`projects`, `overview`, `gaardbo digital`]} />
-      <section>
+      <Section color={pageContext.settings.color} invertedColor={invertColor(pageContext.settings.color)}>
 
         <div className="container">
 
           <div className="content">
             <div dangerouslySetInnerHTML={{__html: pageContext.content}}></div>
-            {/*https://www.youtube.com/embed/kiQkEMG6E3g?controls=1&showinfo=1&rel=1&autoplay=1&loop=1&mute=1*/}
           </div>
 
           {pageContext.settings.youtubeurl && (
@@ -23,7 +25,7 @@ const ProjectPage = ({ pageContext }) => {
           )}
 
         </div>
-      </section>
+      </Section>
     </Layout>
   )
 }

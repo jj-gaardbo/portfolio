@@ -46,3 +46,18 @@ export function getCategoryObject(cat) {
 
   return object
 }
+
+export function invertColor(hex) {
+  if (hex.indexOf('#') === 0) {
+    hex = hex.slice(1);
+  }
+  let r = 255 - parseInt(hex.slice(0, 2), 16)
+  let g = 255 - parseInt(hex.slice(2, 4), 16)
+  let b = 255 - parseInt(hex.slice(4, 6), 16)
+  if(r < 127 && g < 127 || g < 127 && b < 127 || b < 127 && r < 127){
+    return constant.black
+  } else {
+    return constant.darkWhite
+  }
+
+}
