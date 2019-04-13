@@ -7,6 +7,8 @@ import { pathToSlug } from "../util/pageMapper"
 import { Link } from "gatsby"
 import projectsOverviewStyles from '../styles/pages/projects'
 import { getImagePath } from "../util/common"
+import * as constant from "../styles/base/constants"
+import { css, Global } from "@emotion/core"
 
 const ProjectsPage = ({ data }) => {
 
@@ -21,8 +23,15 @@ const ProjectsPage = ({ data }) => {
   })
 
   return(
-    <Layout styles={projectsOverviewStyles}>
+    <Layout styles={projectsOverviewStyles} backgroundColor={constant.blueGray} color={constant.darkWhite}>
       <SEO title="Gaardbo Digital - Projects" keywords={[`projects`, `overview`, `gaardbo digital`]} />
+      <Global
+        styles={css`
+					html {
+						background-color: ${constant.blueGray};
+					}
+				`}
+      />
         <section className='projects-overview'>
           <div className="container">
           {

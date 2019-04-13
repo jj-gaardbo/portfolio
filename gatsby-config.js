@@ -37,11 +37,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Open Sans:300,400,600']
-        },
-        custom: {
-          families: ['Pixel'],
-          urls: ['/fonts/pixelfont.css']
+          families: ['Open Sans:300,400,600', 'Roboto Slab:300,400,700']
         }
       }
     },

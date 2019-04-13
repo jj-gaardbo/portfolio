@@ -4,11 +4,20 @@ import SEO from "../components/seo"
 import frontPageStyle from '../styles/pages/frontpage'
 import { QuickLink } from "../styles/pages/frontpage"
 import { graphql } from "gatsby"
+import * as constant from '../styles/base/constants'
+import { css, Global } from "@emotion/core"
 
 const IndexPage = ({ data }) => {
   return(
-    <Layout styles={frontPageStyle}>
+    <Layout styles={frontPageStyle} backgroundColor={constant.darkWhite} color={constant.black}>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Global
+        styles={css`
+					html {
+						background-color: ${constant.darkWhite};
+					}
+				`}
+      />
 
       <QuickLink>
 

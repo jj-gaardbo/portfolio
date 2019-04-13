@@ -4,6 +4,21 @@ import resets from './resets'
 import typography from './typography'
 import navigation from './navigation'
 
+export const containerLayout = css`
+      display: grid;
+      grid-column: -1 / 1;
+      grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
+      ${constant.lg}{
+        grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
+      }
+      ${constant.xl}{
+        grid-template-columns: auto ${constant.padDesktop} [contentStart] calc(${constant.wrapperMaxWidthDesktopSmall} - (${constant.padDesktop}*2)) [contentEnd] ${constant.padDesktop} auto;
+      }
+      ${constant.xxl}{
+        grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
+      }
+`
+
 export default css`
   ${resets}
   ${typography}
@@ -33,25 +48,13 @@ export default css`
     background-color: ${constant.darkWhite};
     
     .header-inner{
-      display: grid;
-      grid-column: -1 / 1;
-      
-      grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
-      ${constant.lg}{
-        grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
-      }
-      ${constant.xl}{
-        grid-template-columns: auto ${constant.padDesktop} [contentStart] calc(${constant.wrapperMaxWidthDesktopSmall} - (${constant.padDesktop}*2)) [contentEnd] ${constant.padDesktop} auto;
-      }
-      ${constant.xxl}{
-        grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
-      }
+      ${containerLayout}
    
       .container{
         display: grid;
         grid-template-columns: ${constant.logoWidthMob} auto;
         grid-column: 2;
-        grid-template-rows: ${constant.headerHeight};
+        grid-template-rows: ${constant.headerHeightMob};
         div:first-of-type{
           display: grid;
           justify-items: end;
@@ -59,15 +62,18 @@ export default css`
         }
         .logo{
           &>svg{
-            width: ${constant.logoWidthMob}
+            width: ${constant.logoWidthMob};
+            height: ${constant.headerHeightMob};
           }
         }
         ${constant.lg} {
           grid-template-columns: ${constant.logoWidth} auto;
           grid-column: 3;
+          grid-template-rows: ${constant.headerHeight};
           .logo{
             &>svg{
               width: ${constant.logoWidth};
+              height: ${constant.headerHeight};
             }
           }
         }
@@ -82,17 +88,7 @@ export default css`
     grid-column: -1 / 1;
 
     &>div, >section{
-      display: grid;
-      grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
-      ${constant.lg}{
-        grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
-      }
-      ${constant.xl}{
-        grid-template-columns: auto ${constant.padDesktop} [contentStart] calc(${constant.wrapperMaxWidthDesktopSmall} - (${constant.padDesktop}*2)) [contentEnd] ${constant.padDesktop} auto;
-      }
-      ${constant.xxl}{
-        grid-template-columns: auto ${constant.padDesktop} [contentStart] ${constant.wrapperMaxWidthDesktop} [contentEnd] ${constant.padDesktop} auto;
-      }
+      ${containerLayout}
     }
       
     .container{
@@ -108,5 +104,9 @@ export default css`
   
   section{
     padding: ${constant.padMobile} 0;
+    
+    ${constant.lg}{
+      padding: ${constant.padDesktop} 0;
+    }
   }
 `

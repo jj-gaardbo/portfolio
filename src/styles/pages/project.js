@@ -6,6 +6,4 @@ import globalStyles from '../base/global'
 
 export default css`
   ${globalStyles}
-  
-  
 `

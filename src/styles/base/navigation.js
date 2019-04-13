@@ -17,15 +17,15 @@ export default css`
   .navbar-desktop{
     display: none!important;
   }
-  .navbar-mobile{    
+  .navbar-mobile{
     &>div:nth-of-type(2){
       animation: ${animateOpen} 0.2s ease-in;
-      top: ${constant.headerHeight};
+      top: ${constant.headerHeightMob};
       left: 0;
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background-color: ${constant.babyBlueBright};
+      background-color: ${constant.darkWhite};
       .nav-menu{
         display: grid;
         grid-template-columns: ${constant.padMobile} auto ${constant.padMobile};
@@ -36,11 +36,14 @@ export default css`
           display: block;
           justify-self: left;
           a{
-            color: ${constant.darkWhite};
+            color: ${constant.black};
             text-decoration: none;
             font-family: 'Open Sans', sans-serif;
           }
         }
+      }
+      ${constant.lg}{
+        top: ${constant.headerHeight};
       }
     }
   }
