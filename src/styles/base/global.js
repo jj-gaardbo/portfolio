@@ -105,4 +105,8 @@ export default css`
       }
     }
   }
+  
+  section{
+    padding: ${constant.padMobile} 0;
+  }
 `

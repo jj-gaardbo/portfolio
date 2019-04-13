@@ -31,8 +31,9 @@ const ProjectsPage = ({ data }) => {
                 key={index}
                 settings={node.settings}
                 content={node.content}
-                imagePath={`${node.path}/profile.jpg`}
-                path={pathToSlug(node.path)}/>
+                imagePath={getImagePath(node.path, node.settings.mainImg)}
+                path={pathToSlug(node.path)}
+              />
             ))
           }
           </div>

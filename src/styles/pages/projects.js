@@ -20,6 +20,8 @@ export default css`
   }
     
   ${constant.lg}{
+    padding: ${constant.padDesktop} 0;
+    
     .container{
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: ${constant.padDesktop};
