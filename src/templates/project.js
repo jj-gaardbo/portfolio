@@ -11,6 +11,8 @@ import { css } from '@emotion/core'
 import Image from "../components/Image"
 
 const ProjectPage = ({ pageContext }) => {
+  let hasVideo = pageContext.settings.youtubeurl !== ""
+
   return (
     <Layout styles={projectTemplateStyles} backgroundColor={pageContext.settings.color} color={invertColor(pageContext.settings.color)}>
       <Global
@@ -24,7 +26,7 @@ const ProjectPage = ({ pageContext }) => {
       <Section color={pageContext.settings.color} invertedColor={invertColor(pageContext.settings.color)}>
 
 
-        <HeroImage color={pageContext.settings.color}>
+        <HeroImage color={pageContext.settings.color} hasVideo={hasVideo}>
           <div className="container">
             <Image
               path={getImagePath(pageContext.relativeDirectory, pageContext.settings.mainImg)}
@@ -36,9 +38,22 @@ const ProjectPage = ({ pageContext }) => {
           </div>
         </HeroImage>
 
-        <ProjectContent>
+        <ProjectContent color={pageContext.settings.color} hasVideo={hasVideo}>
           <div className="container">
-            <div dangerouslySetInnerHTML={{__html: pageContext.content}}></div>
+            <div className={"text"} dangerouslySetInnerHTML={{__html: pageContext.content}}></div>
+            <div className={"tech"}>
+              <ul>
+                {Object.keys(
+                  pageContext.settings.technologies
+                ).map((key, index, value) => (
+                  <li key={index}>
+                    <strong>
+                      {pageContext.settings.technologies[key].toString()}
+                    </strong>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </ProjectContent>
       </Section>

@@ -45,7 +45,7 @@ export const HeroImage = styled.div(props => (css`
       .container{
         grid-column: 3;
         display: grid;
-        grid-template-rows: calc(${constant.heroHeight} - 70px) 400px;
+        grid-template-rows: calc(${constant.heroHeight} - 100px) 400px;
         
         .gatsby-image-wrapper{
           grid-row: 1;
@@ -60,17 +60,30 @@ export const HeroImage = styled.div(props => (css`
           justify-self: end;
           z-index: 3;
           grid-row: 2;
-          margin-right: ${constant.padDesktop};
+          margin-right: calc(${constant.padDesktop});
         }
       }
   }
 `))
 
-export const ProjectContent = styled.div`
+export const ProjectContent = styled.div(props => (css`
   ${containerLayout};
   background-color: ${constant.darkWhite};
+  min-height: 1000px;
   
   .container{
-    grid-template-columns: auto calc(700px + (${constant.padDesktop} * 3));
+    grid-template-columns: auto calc(700px + (${constant.padDesktop}*2));
+    
+    .text{
+      grid-column: 1;
+      padding-right: calc(${constant.padDesktop} * 3);
+    }
+    
+    .tech{
+      background-color: ${props.color};
+      grid-column: 2;
+      box-sizing: border-box;
+      padding: ${props.hasVideo ? `330px ${constant.padDesktop}` : `${constant.padDesktop}`};
+    }
   }
-`
+`))
