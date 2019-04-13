@@ -13,7 +13,6 @@ const IndexPage = ({ data }) => {
       <QuickLink>
 
         <div className="container">
-          {console.log(data)}
           <div dangerouslySetInnerHTML={{__html: data.fileName.content}}></div>
         </div>
 
