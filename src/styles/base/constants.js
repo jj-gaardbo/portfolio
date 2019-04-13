@@ -60,6 +60,8 @@ export const h4SizeMob = '16pt'
 export const h5SizeMob = '12pt'
 export const h6SizeMob = '11pt'
 
+export const microText = '8pt'
+
 export const textSize = '11pt'
 export const navFontSizeDesk = '12pt'
 export const navFontSizeMob = '11pt'

@@ -36,10 +36,25 @@ const ProjectItemOverlay = styled.div(props => (css`
 		    width: 80px;
 		    height: 80px;
 		    z-index: 1;
+		    justify-self: center;
+		  }
+		  span{
+		    z-index: 1;
+		    padding-top: 5px;
+		    color: ${props.textColor};
+		    display: block;
+		    width:100%;
+		    font-size: ${constant.microText};
+		    justify-self: center;
+		    text-align: center;
+		    margin-top: -40px;
 		  }
 		  ${constant.lg}{
         svg{
 		      margin-top: -40px;
+		    }
+		    span{
+		      margin-top: 0;
 		    }
       }
 		}
@@ -107,6 +122,7 @@ const ProjectItem = props => {
       <ProjectItemOverlay color={props.settings.color} textColor={invertColor(props.settings.color)}>
         <div className="project-item-cat">
           <Svg width={170} height={170} svg={category.icon} fill={"#000"}></Svg>
+          <span>{category.name}</span>
         </div>
         <p>{props.settings.title}</p>
       </ProjectItemOverlay>
