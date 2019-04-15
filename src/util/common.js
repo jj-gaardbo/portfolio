@@ -6,6 +6,21 @@ import iconsGraphics from "../images/icons/graphics.svg"
 import iconsSchool from "../images/icons/school.svg"
 import iconsMusic from "../images/icons/music.svg"
 
+import frame1 from "../images/frames/frame1.png"
+import frame2 from "../images/frames/frame2.png"
+import frame3 from "../images/frames/frame3.png"
+import frame4 from "../images/frames/frame4.png"
+import frame5 from "../images/frames/frame5.png"
+import frame6 from "../images/frames/frame6.png"
+
+import pattern1 from "../images/patterns/1.svg"
+import pattern2 from "../images/patterns/2.svg"
+import pattern3 from "../images/patterns/3.svg"
+import pattern4 from "../images/patterns/4.svg"
+import pattern5 from "../images/patterns/5.svg"
+import pattern6 from "../images/patterns/6.svg"
+import pattern7 from "../images/patterns/7.svg"
+
 export function getImagePath(path,image) {
   return path+"/"+image;
 }
@@ -59,5 +74,16 @@ export function invertColor(hex) {
   } else {
     return constant.darkWhite
   }
+}
 
+export function getRandomFrame(){
+  let frames = [frame1, frame2, frame3, frame4, frame5, frame6];
+  let chosenFrameIndex = Math.floor((Math.random() * 5) + 1);
+  return frames[chosenFrameIndex]
+}
+
+export function getRandomComicPattern(){
+  let patterns = [pattern1, pattern2, pattern3, pattern4, pattern5, pattern6, pattern7];
+  let chosenPatternIndex = Math.floor((Math.random() * 6) + 1);
+  return patterns[chosenPatternIndex]
 }

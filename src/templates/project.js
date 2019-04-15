@@ -5,10 +5,11 @@ import SEO from "../components/seo"
 import projectTemplateStyles, { HeroImage, ProjectContent } from "../styles/pages/project"
 import VideoEmbed from "../components/VideoEmbed"
 import { Section } from "../components/Section"
-import { getImagePath, invertColor } from "../util/common"
+import { getImagePath, getRandomComicPattern, getRandomFrame, invertColor } from "../util/common"
 import { Global } from "@emotion/core"
 import { css } from '@emotion/core'
 import Image from "../components/Image"
+import Svg from "../components/Svg"
 
 const ProjectPage = ({ pageContext }) => {
   let hasVideo = pageContext.settings.youtubeurl !== ""
@@ -26,7 +27,8 @@ const ProjectPage = ({ pageContext }) => {
       <Section color={pageContext.settings.color} invertedColor={invertColor(pageContext.settings.color)}>
 
 
-        <HeroImage color={pageContext.settings.color} hasVideo={hasVideo}>
+        <HeroImage color={pageContext.settings.color} hasVideo={hasVideo} pattern={getRandomComicPattern()}>
+          <Svg fill={invertColor(pageContext.settings.color)} svg={getRandomComicPattern()}></Svg>
           <div className="container">
             <Image
               path={getImagePath(pageContext.relativeDirectory, pageContext.settings.mainImg)}

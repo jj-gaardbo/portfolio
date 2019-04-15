@@ -86,6 +86,7 @@ export default css`
   main{
     display: grid;
     grid-column: -1 / 1;
+    padding-top: 0!important;
 
     &>div, >section{
       ${containerLayout}
@@ -99,14 +100,6 @@ export default css`
       ${constant.lg}{
         grid-column: 3;
       }
-    }
-  }
-  
-  section{
-    padding: ${constant.padMobile} 0;
-    
-    ${constant.lg}{
-      padding: ${constant.padDesktop} 0;
     }
   }
 `

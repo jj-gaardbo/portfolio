@@ -5,6 +5,8 @@ import globalStyles from '../base/global'
 export default css`
   ${globalStyles}
   
+  padding-top: ${constant.padMobile};
+  
   .container{
     grid-template-columns: 1fr;
     grid-column-gap: ${constant.padMobile};
@@ -28,6 +30,10 @@ export default css`
       grid-row-gap: ${constant.padDesktop};
     
     }
+  }
+  
+  .projects-overview{
+    background-color: ${constant.darkWhite};
   }
 
 `

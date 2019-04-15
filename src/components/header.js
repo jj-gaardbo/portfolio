@@ -10,9 +10,9 @@ import * as constant from '../styles/base/constants'
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { invertColor } from "../util/common"
+import bottomBorder from "../images/frames/bottomBorder.png"
 
 const HeaderStyled = styled.header(props => (css`
-  background-color: ${props.backgroundColor};
   color: ${props.color};
   .logo{
     svg{
@@ -31,18 +31,33 @@ const HeaderStyled = styled.header(props => (css`
   svg{
     fill: ${props.color};
   }
+  &:after{
+    content: '';
+    max-width: 100%;
+    min-width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(${props.border});
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+  .header-inner{
+    background-color: ${props.backgroundColor};
+  }
 `))
 
 const Header = ({ siteTitle, backgroundColor, color }) => (
-  <HeaderStyled backgroundColor={backgroundColor} color={color}>
+  <HeaderStyled backgroundColor={backgroundColor} color={color} border={bottomBorder}>
     <div className="header-inner">
       <div className="container">
         <Link to='/' aria-label='Home' className={"logo"}>
           <Svg svg={Logo} fill={invertColor(backgroundColor)} width={constant.logoWidth} />
         </Link>
         <ResponsiveMenu
-          menuOpenButton={<Svg fill={invertColor(backgroundColor)} width={constant.burgerBtnWidth} height={constant.burgerBtnHeight} svg={OpenMenu}/>}
-          menuCloseButton={<Svg fill={invertColor(backgroundColor)} width={constant.burgerBtnWidth} height={35} svg={CloseMenu}/>}
+          menuOpenButton={<Svg fill={invertColor(backgroundColor)} width={58} height={50} svg={OpenMenu}/>}
+          menuCloseButton={<Svg fill={invertColor(backgroundColor)} width={58} height={35} svg={CloseMenu}/>}
           changeMenuOn="992px"
           largeMenuClassName="navbar-desktop"
           smallMenuClassName="navbar-mobile"

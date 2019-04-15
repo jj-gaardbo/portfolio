@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import { css } from '@emotion/core'
 import * as constant from "../styles/base/constants.js"
 import Svg from "./Svg"
-import { getCategoryObject, invertColor } from "../util/common"
+import { getCategoryObject, getRandomComicPattern, getRandomFrame, invertColor } from "../util/common"
 
 const ProjectItemOverlay = styled.div(props => (css`
   display: grid;
@@ -74,14 +74,30 @@ const ProjectItemOverlay = styled.div(props => (css`
 		}
 `))
 
-const ProjectItemStyled = styled.article`
+const ProjectItemStyled = styled.article(props => (css`
      background-color: ${constant.darkWhite};
      display: grid;
      grid-template-rows: 500px;
+     position: relative;
+     &:before{
+      background-image: url(${props.frame});
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+     }
      a{
       display: grid;
       grid-template-rows: ${constant.padMobile} 200px auto ${constant.padMobile};
       grid-template-columns: ${constant.padMobile} auto ${constant.padMobile};
+      &>svg{
+      position: absolute;
+      z-index: 4;
+      opacity: 0.1;
+      fill: ${props.invertedColor};
+     }
+     
      }
 		.gatsby-image-wrapper{
 		  width: 100%;
@@ -110,14 +126,15 @@ const ProjectItemStyled = styled.article`
         }
       }
 		}
-`
+`))
 
 const ProjectItem = props => {
   let category = getCategoryObject(props.settings.category)
 
   return (
-  <ProjectItemStyled>
+  <ProjectItemStyled frame={getRandomFrame()} invertedColor={invertColor(props.settings.color)}>
     <Link to={props.path}>
+      <Svg width={442} height={500} svg={getRandomComicPattern()}></Svg>
       <Image alt={"ImageTest"} path={props.imagePath} />
       <ProjectItemOverlay color={props.settings.color} textColor={invertColor(props.settings.color)}>
         <div className="project-item-cat">

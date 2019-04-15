@@ -3,6 +3,7 @@ import * as constant from '../base/constants'
 import globalStyles from '../base/global'
 import { containerLayout } from "../base/global"
 import styled from "@emotion/styled"
+import { getRandomFrame } from "../../util/common"
 
 export default css`
   ${globalStyles}
@@ -11,6 +12,15 @@ export default css`
 export const HeroImage = styled.div(props => (css`
   ${containerLayout}
   height: ${constant.heroHeightMob};
+  position: relative;
+  svg{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0.1;
+  }
   
   &:before{
     position: absolute;
@@ -53,6 +63,9 @@ export const HeroImage = styled.div(props => (css`
           width: auto;
         }  
         iframe{
+          background-image: url(${getRandomFrame()});
+          background-repeat: no-repeat;
+          background-size: cover;
           background-color: ${props.color};
           padding: ${constant.padDesktop};
           box-sizing: border-box;
@@ -77,6 +90,7 @@ export const ProjectContent = styled.div(props => (css`
     .text{
       grid-column: 1;
       padding-right: calc(${constant.padDesktop} * 3);
+      color: ${constant.black}!important;
     }
     
     .tech{
