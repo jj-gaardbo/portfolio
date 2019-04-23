@@ -8,6 +8,7 @@ export const containerLayout = css`
       display: grid;
       grid-column: -1 / 1;
       grid-template-columns: ${constant.padMobile} [contentStart] auto [contentEnd] ${constant.padMobile};
+      grid-template-rows: auto;
       ${constant.lg}{
         grid-template-columns: auto ${constant.padMobile} [contentStart] calc(${constant.wrapperMaxWidthTablet} - (${constant.padMobile}*2)) [contentEnd] ${constant.padMobile} auto;
       }

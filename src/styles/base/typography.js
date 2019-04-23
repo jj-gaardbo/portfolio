@@ -59,6 +59,7 @@ export default css`
 	
 	p,strong,a,li,b,i, ul, ol{
 	  font-size: ${constant.textSize};
+	  line-height: 20px;
 	}
 	
 	a{
