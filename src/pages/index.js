@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
 
             </div>
 
-            <Parallax className="custom-class" y={[10, 10]} x={[-10, 25]} tagOuter="figure">
+            <Parallax className="custom-class" y={[15, -30]} x={[10, 25]} tagOuter="figure">
 
               <Image path={settingsNode.mainImg} alt={"Profile Image"}/>
 
