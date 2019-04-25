@@ -1,9 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import { Global } from '@emotion/core'
+import { css, Global } from "@emotion/core"
 
 import Header from "./header"
+
+import * as constant from "../styles/base/constants"
+import { Footer } from "./footer"
 
 const Layout = ({ children, styles, backgroundColor, color }) => (
   <StaticQuery
@@ -18,12 +21,21 @@ const Layout = ({ children, styles, backgroundColor, color }) => (
     `}
     render={data => (
       <>
+        <Global
+          styles={css`
+					html {
+						background-color: ${backgroundColor};
+					}
+				`}
+        />
         <Header siteTitle={data.site.siteMetadata.title} backgroundColor={backgroundColor} color={color}/>
         <div className="push">&nbsp;</div>
         <main>
           <Global styles={styles} />
           {children}
         </main>
+
+        <Footer />
       </>
     )}
   />

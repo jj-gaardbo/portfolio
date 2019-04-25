@@ -47,7 +47,6 @@ const ProjectsPage = ({ data }) => {
           }
           </div>
         </section>
-        <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 

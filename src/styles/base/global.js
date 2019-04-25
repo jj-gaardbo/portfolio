@@ -88,6 +88,7 @@ export default css`
     display: grid;
     grid-column: -1 / 1;
     padding-top: 0!important;
+    padding-bottom: 0!important;
 
     &>div, >section{
       ${containerLayout}

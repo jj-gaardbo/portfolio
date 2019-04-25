@@ -38,6 +38,7 @@ export default css`
     .parallax-outer{
       max-width: 100%;
       overflow: hidden;
+      max-height: 55vh;
     }
     
     .parallax-inner{
@@ -60,6 +61,10 @@ export default css`
   
   ${constant.md}{
     section{
+        .parallax-outer{
+          max-height: 110vh;
+        }
+    
       .text{
         position: absolute;
         left: 0;
