@@ -32,7 +32,7 @@ export default css`
       background-color: ${constant.darkWhite};
       border: 10px solid ${constant.black};
       box-sizing: border-box;
-      padding: 20px;
+      padding: 20px 20px 40px;
     }
     
     .parallax-outer{

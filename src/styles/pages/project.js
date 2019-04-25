@@ -110,7 +110,7 @@ export const ProjectContent = styled.div(props => (css`
   .container{
     grid-template-rows: auto;
     grid-template-columns: auto;
-    padding-bottom: calc(${constant.padDesktop} * 3);
+    padding-bottom: calc(${constant.padDesktop} * 4);
     
     aside{
       grid-column: -1 / 1;
@@ -120,8 +120,12 @@ export const ProjectContent = styled.div(props => (css`
       padding-bottom: ${constant.padMobile};
     }
     
+    .text{
+      padding-top: calc(${constant.padMobile} * 2);
+    }
+    
     .text, .tech{
-      padding-bottom: ${constant.padMobile};
+      padding-bottom: calc(${constant.padMobile} * 4);
     }
     
     iframe{

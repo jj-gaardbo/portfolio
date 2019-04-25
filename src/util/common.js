@@ -63,6 +63,7 @@ export function getCategoryObject(cat) {
 }
 
 export function invertColor(hex) {
+  {console.log(hex)}
   if (hex.indexOf('#') === 0) {
     hex = hex.slice(1);
   }
