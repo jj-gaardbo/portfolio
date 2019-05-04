@@ -53,7 +53,7 @@ const Header = ({ siteTitle, backgroundColor, color }) => (
     <div className="header-inner">
       <div className="container">
         <Link to='/' aria-label='Home' className={"logo"}>
-          <Svg svg={Logo} fill={invertColor(backgroundColor)} width={constant.logoWidth} />
+          <Svg svg={Logo} fill={invertColor(backgroundColor)} width={230} />
         </Link>
         <ResponsiveMenu
           menuOpenButton={<Svg fill={invertColor(backgroundColor)} width={58} height={50} svg={OpenMenu}/>}
