@@ -51,10 +51,12 @@ export const HeroImage = styled.div(props => (css`
       max-width: 100%;      
       z-index: 2;
       width: 140px;
-      left: 50%;
+      left: calc(50% - ${constant.padMobile});
       margin-left: -70px;
       top: 10%;
+      padding: ${constant.padMobile};
       border: 10px solid ${constant.black};
+      background-color: ${constant.darkWhite};
       
       &>.gatsby-image-wrapper{
         height: auto;

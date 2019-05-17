@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const VideoEmbed = ({ width, height, id }) => (
   <iframe
+    title={id}
     width={width}
     height={height}
     src={`https://www.youtube-nocookie.com/embed/${id}?rel=0&amp;autoplay=1&mute=1&loop=1&modestbranding=1&showinfo=0&cc_load_policy=1&color=white`}

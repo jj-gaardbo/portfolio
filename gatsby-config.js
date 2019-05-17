@@ -42,8 +42,13 @@ module.exports = {
       }
     },
     'gatsby-plugin-emotion',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        withWebP: true
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,16 +1,14 @@
 import React from 'react'
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import projectTemplateStyles, { HeroImage, ProjectContent, ProjectMoodImage } from "../styles/pages/project"
 import VideoEmbed from "../components/VideoEmbed"
 import { Section } from "../components/Section"
-import { getImagePath, getRandomComicPattern, getRandomFrame, invertColor } from "../util/common"
+import { getImagePath, getRandomComicPattern, invertColor } from "../util/common"
 import { Global } from "@emotion/core"
 import { css } from '@emotion/core'
 import Image from "../components/Image"
 import Svg from "../components/Svg"
-import { logoWidth } from "../styles/base/constants"
 
 const ProjectPage = ({ pageContext }) => {
   let hasVideo = pageContext.settings.youtubeurl !== ""

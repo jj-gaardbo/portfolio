@@ -7,14 +7,17 @@ export default css`
   ${containerLayout}
   position: relative;
   
-  svg{
-    position: absolute;
-    max-width: 100%;
-    width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.1;
+  .frontpage-section{
+    svg{
+      margin-top: -20px;
+      position: absolute;
+      max-width: 100%;
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.1;
+    }  
   }
   
   section{

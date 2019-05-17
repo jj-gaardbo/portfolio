@@ -39,6 +39,15 @@ const FooterStyled = styled.footer(props => (css`
   
   .linkedin-link{
     grid-row: 3;
+    
+    max-width: 25px;
+    svg{
+      margin-top: 0;
+      max-width: 25px;
+      width: 25px;
+      height: 25px;
+      opacity: 1;
+    }
   }
   
   svg{
@@ -87,7 +96,7 @@ export const Footer = ({ backgroundColor, color }) => (
         <div className="container">
 
           <Link to='/' aria-label='Home' className={"logo"}>
-            <Svg svg={Logo} fill={invertColor(backgroundColor)} width={constant.logoWidth} />
+            <Svg svg={Logo} fill={invertColor(backgroundColor)} width={230} height={150}/>
           </Link>
 
           <a className={"mailto"} href={`mailto:${JSON.parse(data.settings.content).email}`}>{JSON.parse(data.settings.content).email}</a>

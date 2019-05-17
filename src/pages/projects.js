@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import { graphql } from 'gatsby'
 import ProjectItem from "../components/ProjectItem"
 import { pathToSlug } from "../util/pageMapper"
-import { Link } from "gatsby"
 import projectsOverviewStyles from '../styles/pages/projects'
 import { getImagePath } from "../util/common"
 import * as constant from "../styles/base/constants"

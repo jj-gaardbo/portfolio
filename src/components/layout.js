@@ -2,10 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { css, Global } from "@emotion/core"
-
 import Header from "./header"
-
-import * as constant from "../styles/base/constants"
 import { Footer } from "./footer"
 
 const Layout = ({ children, styles, backgroundColor, color }) => (

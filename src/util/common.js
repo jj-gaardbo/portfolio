@@ -57,6 +57,10 @@ export function getCategoryObject(cat) {
       object.icon = iconsGraphics
       object.color = constant.blue
       break
+    default:
+      object.name = "No category"
+      object.icon = iconsGraphics
+      object.color = constant.darkWhite
   }
 
   return object
@@ -69,7 +73,7 @@ export function invertColor(hex) {
   let r = 255 - parseInt(hex.slice(0, 2), 16)
   let g = 255 - parseInt(hex.slice(2, 4), 16)
   let b = 255 - parseInt(hex.slice(4, 6), 16)
-  if(r < 127 && g < 127 || g < 127 && b < 127 || b < 127 && r < 127){
+  if((r && g < 127) || (g && b < 127) || (b && r < 127)){
     return constant.black
   } else {
     return constant.darkWhite

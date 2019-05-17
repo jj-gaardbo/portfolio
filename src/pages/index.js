@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import * as constant from '../styles/base/constants'
 import { css, Global } from "@emotion/core"
 import Image from "../components/Image"
-import { getRandomComicPattern, invertColor } from "../util/common"
+import { invertColor } from "../util/common"
 import Svg from "../components/Svg"
 import pattern from "../images/patterns/4.svg"
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
@@ -27,11 +27,11 @@ const IndexPage = ({ data }) => {
 				`}
       />
 
-      <Svg width={442} height={500} svg={pattern}></Svg>
-
       <ParallaxProvider>
 
         <section className='frontpage-section'>
+
+          <Svg width={442} height={500} svg={pattern}></Svg>
 
           <div className="container">
 
